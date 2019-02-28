@@ -8,3 +8,9 @@ var data = {
 exports.adminView = function(request, response){
   response.render('rsvp', data);
 };
+exports.addRSVP = function(request,response){
+	var rsvpEmail = reqeust.body.rsvpEmail;
+	console.log(rsvpEmail);
+	data.rsvp.push(rsvpEmail);
+	response.send(rsvpEmail);
+};
